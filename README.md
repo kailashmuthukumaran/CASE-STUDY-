@@ -1,39 +1,57 @@
-# CASE-STUDY-
+# Case Study: Resource Allocation and Cost Optimization in an OpenStack Private Cloud
+# Problem 1: Total Compute Capacity
+# Given:
 
-Case Study Title: Resource Allocation and Cost Optimization in an OpenStack Private Cloud
+5 Compute Nodes
 
-Case Overview:
+# Each node has:
 
-ABC Cloud Services runs a private cloud using OpenStack to host virtual machines (VMs) for internal development, testing, and production workloads. Their cloud infrastructure comprises:
-
-5 Compute Nodes, each with:
 64 vCPUs
+
 256 GB RAM
+
 2 TB SSD storage
-OpenStack Services Deployed:
-Nova (Compute)
-Neutron (Networking)
-Cinder (Block Storage)
-Glance (Image Management)
-Keystone (Identity)
-Horizon (Dashboard)
-Heat (Orchestration)
 
-They are considering expanding their cloud but want to first evaluate current capacity usage, VM density, and cost efficiency. The goal is to calculate whether their resource usage aligns with business needs and how to optimize it.
+# Q: What is the total available compute capacity in terms of:
 
-Case Study Questions – OpenStack Calculation in Cloud Computing
-
-1. Resource Utilization:
-
-Based on the current infrastructure, what is the total available compute capacity in terms of:
 Total vCPUs
+
 Total RAM
+
 Total storage
 
-2.Storage Allocation:
+# Step 1: Total vCPUs
+Total vCPUs = 5 × 64 = 320 vCPUs
 
-Given 10 TB of total block storage across the cloud, how many VMs can be supported if:
-a) Each VM is allocated 100 GB block storage
-b) Snapshot storage consumes 20% extra on average
+# Step 2: Total RAM
+Total RAM = 5 × 256 = 1280 GB or 1.25 TB
 
-**SOLUTIONS:**
+# Step 3: Total Storage
+Total Storage = 5 × 2 TB = 10 TB
+
+# Answer: 
+The infrastructure has 320 vCPUs, 1.25 TB RAM, and 10 TB SSD storage.
+
+# Problem 2: Storage Allocation and VM Capacity
+# Given:
+
+Total block storage available: 10 TB = 10,000 GB
+
+Each VM requires: 100 GB block storage
+
+Snapshot overhead: 20% extra
+
+# Q(a): How many VMs can be supported without snapshot overhead?
+Number of VMs = 10,000 GB / 100 GB = 100 VMs
+
+# Q(b): How many VMs can be supported with 20% snapshot overhead?
+# Each VM now consumes:
+100 GB + 20% = 100 × 1.2 = 120 GB
+
+Number of VMs = 10,000 / 120 ≈ 83 VMs (rounded down)
+
+# Answer:
+
+Without snapshot overhead: 100 VMs
+
+With 20% snapshot overhead: 83 VMs
